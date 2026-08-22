@@ -16,10 +16,10 @@ filter, or candidate set across modalities and return one end-to-end answer.
 
 - **Coming soon** — Paper and benchmark data release.
 - **August 2026** — Repository preview with reference prompts, public tools,
-  evaluation scripts, and preprocessing utilities.
+  evaluation scripts, and preprocessing utilities; the initial
+  [leaderboard](https://refactored-couscous-pz385jr.pages.github.io/) went live.
 - **June 2, 2026** — HybridDeepResearch introduced in the
-  [Snowflake Engineering Blog](https://www.snowflake.com/en/blog/engineering/hybrid-deep-research-benchmark/);
-  the initial [leaderboard](https://refactored-couscous-pz385jr.pages.github.io/) went live.
+  [Snowflake Engineering Blog](https://www.snowflake.com/en/blog/engineering/hybrid-deep-research-benchmark/).
 
 ## Benchmark at a glance
 
