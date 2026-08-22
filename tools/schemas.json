@@ -1,0 +1,96 @@
+[
+  {
+    "name": "web_search",
+    "description": "Search the public web. Returns titles, URLs, and snippets. Use this to discover sources; follow with web_fetch for full page content.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "query": {
+          "type": "string",
+          "description": "Search query (max 400 chars / 50 words)."
+        },
+        "count": {
+          "type": "integer",
+          "description": "Number of results (1-20). Default 10."
+        }
+      },
+      "required": ["query"]
+    }
+  },
+  {
+    "name": "web_fetch",
+    "description": "Fetch a URL and return page text. Use after web_search when the search snippets are not enough.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "url": {
+          "type": "string",
+          "description": "Page URL to fetch."
+        }
+      },
+      "required": ["url"]
+    }
+  },
+  {
+    "name": "run_sql",
+    "description": "Execute a read-only SQL query on the task's SQLite database. Allowed openers: SELECT / WITH / PRAGMA / EXPLAIN. Writes are rejected.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "sql": {
+          "type": "string",
+          "description": "SQL query to run."
+        },
+        "description": {
+          "type": "string",
+          "description": "Optional one-line summary of the query's intent."
+        }
+      },
+      "required": ["sql"]
+    }
+  },
+  {
+    "name": "get_all_external_knowledge_names",
+    "description": "List the names (titles) of every external knowledge entry for this database. Use this first to discover what domain knowledge exists before writing SQL.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "get_knowledge_definition",
+    "description": "Return the full definition of one external knowledge entry.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "knowledge_name": {
+          "type": "string",
+          "description": "Entry title or id (numeric 0 or database-qualified alien_0)."
+        }
+      },
+      "required": ["knowledge_name"]
+    }
+  },
+  {
+    "name": "get_all_knowledge_definitions",
+    "description": "Return all external knowledge definitions for this database. Prefer get_knowledge_definition for one or two entries; this may return a titles-only catalog when the full JSON is too large.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "final_answer",
+    "description": "Submit the final answer and end the conversation. Call this exactly once. Do not call any other tool in the same turn.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "answer": {
+          "type": "string",
+          "description": "Concise final answer to the user's question. For S2SQL, put the canonical query in a fenced sql block."
+        }
+      },
+      "required": ["answer"]
+    }
+  }
+]

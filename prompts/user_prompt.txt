@@ -1,0 +1,8 @@
+## Final question
+{final_question}
+
+## Hint
+{hint}
+
+## Database
+{database_metadata}
