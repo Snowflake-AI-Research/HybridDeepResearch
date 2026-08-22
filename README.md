@@ -3,10 +3,7 @@
 <div align="center">
   <p><strong>A benchmark for deep-research agents that reason across SQL databases and the open web.</strong></p>
 
-[![Snowflake AI Research](https://img.shields.io/badge/Snowflake%20AI%20Research-29B5E8?style=for-the-badge&logo=snowflake&logoColor=white)](https://www.snowflake.com/en/blog/authors/snowflake-ai-research/)
-![arXiv](https://img.shields.io/badge/arXiv-coming%20soon-B31B1B?style=for-the-badge&logo=arxiv&logoColor=white)
-![Hugging Face](https://img.shields.io/badge/Hugging%20Face-coming%20soon-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)
-[![Leaderboard](https://img.shields.io/badge/Leaderboard-live-11567F?style=for-the-badge&logo=github&logoColor=white)](https://refactored-couscous-pz385jr.pages.github.io/)
+<a href="https://www.snowflake.com/en/blog/authors/snowflake-ai-research/"><img alt="Snowflake AI Research" src="https://img.shields.io/badge/Snowflake-AI%20Research-29B5E8?style=flat-square&labelColor=0B1F33&logo=snowflake&logoColor=29B5E8"></a>&nbsp;<a href="https://refactored-couscous-pz385jr.pages.github.io/"><img alt="Leaderboard" src="https://img.shields.io/badge/Leaderboard-live-29B5E8?style=flat-square&labelColor=0B1F33&logo=github&logoColor=white"></a>&nbsp;<img alt="Paper" src="https://img.shields.io/badge/arXiv-coming%20soon-64748B?style=flat-square&labelColor=0B1F33&logo=arxiv&logoColor=white">&nbsp;<img alt="Dataset" src="https://img.shields.io/badge/Hugging%20Face-coming%20soon-64748B?style=flat-square&labelColor=0B1F33&logo=huggingface&logoColor=white">
 
 </div>
 
