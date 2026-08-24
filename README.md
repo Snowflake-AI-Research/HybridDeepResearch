@@ -3,7 +3,7 @@
 <div align="center">
   <p><strong>A benchmark for deep-research agents that reason across SQL databases and the open web.</strong></p>
 
-<a href="https://www.snowflake.com/en/blog/authors/snowflake-ai-research/"><img alt="Snowflake AI Research" src="https://img.shields.io/badge/Snowflake-AI%20Research-29B5E8?style=flat&labelColor=333333&logo=snowflake&logoColor=29B5E8"></a>&nbsp;<a href="https://refactored-couscous-pz385jr.pages.github.io/"><img alt="Leaderboard" src="https://img.shields.io/badge/Leaderboard-live-29B5E8?style=flat&labelColor=333333&logo=snowflake&logoColor=29B5E8"></a>&nbsp;<img alt="arXiv Paper" src="https://img.shields.io/badge/arXiv-Paper-B31B1B?style=flat&labelColor=333333&logo=arxiv&logoColor=white">&nbsp;<img alt="Hugging Face Dataset" src="https://img.shields.io/badge/Hugging%20Face-Dataset-FFD21E?style=flat&labelColor=333333&logo=huggingface&logoColor=FFD21E">
+<a href="https://www.snowflake.com/en/blog/authors/snowflake-ai-research/"><img alt="Snowflake AI Research" src="https://img.shields.io/badge/Snowflake-AI%20Research-29B5E8?style=flat&labelColor=333333&logo=snowflake&logoColor=29B5E8"></a>&nbsp;<a href="https://refactored-couscous-pz385jr.pages.github.io/"><img alt="Leaderboard" src="https://img.shields.io/badge/Leaderboard-live-29B5E8?style=flat&labelColor=333333&logo=snowflake&logoColor=29B5E8"></a>&nbsp;<img alt="arXiv Paper" src="https://img.shields.io/badge/arXiv-Paper-B31B1B?style=flat&labelColor=333333&logo=arxiv&logoColor=white">&nbsp;<a href="https://huggingface.co/datasets/Snowflake/HybridDeepResearch"><img alt="Hugging Face Dataset" src="https://img.shields.io/badge/Hugging%20Face-Dataset-FFD21E?style=flat&labelColor=333333&logo=huggingface&logoColor=FFD21E"></a>
 
 </div>
 
@@ -14,10 +14,12 @@ filter, or candidate set across modalities and return one end-to-end answer.
 
 ## Updates
 
-- **Coming soon** — Paper and benchmark data release.
+- **Coming soon** — Paper release.
 - **August 2026** — Repository preview with reference prompts, public tools,
   evaluation scripts, and preprocessing utilities; the initial
-  [leaderboard](https://refactored-couscous-pz385jr.pages.github.io/) went live.
+  [leaderboard](https://refactored-couscous-pz385jr.pages.github.io/) went live;
+  benchmark data is on
+  [Hugging Face](https://huggingface.co/datasets/Snowflake/HybridDeepResearch).
 - **June 2, 2026** — HybridDeepResearch introduced in the
   [Snowflake Engineering Blog](https://www.snowflake.com/en/blog/engineering/hybrid-deep-research-benchmark/).
 
@@ -88,7 +90,12 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-Dataset download instructions will be added when the Hugging Face release is available.
+Download the public test set from
+[Hugging Face](https://huggingface.co/datasets/Snowflake/HybridDeepResearch):
+
+```bash
+hf download Snowflake/HybridDeepResearch --repo-type dataset
+```
 
 ## Task interface
 
@@ -150,9 +157,10 @@ python evaluation/s2sql_eval.py \
 
 ## Data and preprocessing
 
-The benchmark data is not included in this GitHub preview; it will be released as a
-public test set with gold answers so local grading is possible. Agent runs should still
-only consume `final_question`, `hint`, and `db`.
+The benchmark data lives on
+[Hugging Face](https://huggingface.co/datasets/Snowflake/HybridDeepResearch).
+It is a public test set with gold answers so local grading is possible. Agent runs
+should still only consume `final_question`, `hint`, and `db`.
 
 The preprocessing examples show how to:
 
@@ -169,11 +177,9 @@ The expected submission artifact is a JSONL file keyed by `instance_id`, togethe
 system metadata and a short method description. Before preparing an official
 submission, read [`docs/submission.md`](docs/submission.md).
 
-## Citation
-
-Citation metadata will be added with the paper release. Until then, please reference
-the [HybridDeepResearch announcement](https://www.snowflake.com/en/blog/engineering/hybrid-deep-research-benchmark/).
 
 ## License
 
-This repository is released under the [Apache License 2.0](LICENSE).
+The benchmark data and original datasets released with this repository are licensed under their original license or under CC BY-SA 4.0
+
+All other content (code, eval scripts, preprocessing, prompts, documentation) is Apache 2.0.

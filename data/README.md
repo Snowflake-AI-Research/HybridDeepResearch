@@ -1,10 +1,13 @@
 # Data
 
-The HybridDeepResearch data release is forthcoming.
+The HybridDeepResearch task files are on
+[Hugging Face](https://huggingface.co/datasets/Snowflake/HybridDeepResearch).
 
 The public package is a test set, not a hidden set. It ships the full task records,
-including gold answers and reference SQL, so anyone can grade runs locally. Local
-SQLite databases are released alongside the tasks.
+including gold answers and reference SQL, so anyone can grade runs locally. SQLite
+databases are not in this GitHub repository; obtain them from the original
+[LiveSQLBench](https://huggingface.co/datasets/birdsql/livesqlbench-base-lite-sqlite)
+release.
 
 ## How the search and SQL tracks are built
 
@@ -19,7 +22,7 @@ entity plus schema, then execution and human filters.
 
 ![SQL-track construction](sql-pipeline-example.png)
 
-Two versioned task files are planned:
+Two versioned task files are on Hugging Face:
 
 - **Preview**: the complete v1 task set used for the paper results.
 - **Release**: the same task IDs and ordering, with internally validated v2
@@ -45,7 +48,5 @@ Each version is a single JSONL file covering all three task categories. Record f
 Agents should only receive `final_question`, `hint`, and `db`. The remaining fields are
 references for grading and analysis.
 
-The final counts and download instructions will be published here with the
-release. Repository contents are provided under the
-[Apache License 2.0](../LICENSE). The official release documentation takes precedence
-over this preview.
+Both splits contain 380 tasks (SQL2S 203, S2SQL 58, Parallel 119). See the
+[repository License](../README.md#license) section for data and code licenses.
