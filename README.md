@@ -90,12 +90,8 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-Download the public test set from
-[Hugging Face](https://huggingface.co/datasets/Snowflake/HybridDeepResearch):
-
-```bash
-hf download Snowflake/HybridDeepResearch --repo-type dataset
-```
+Download the public test set from Hugging Face (see
+[Data and preprocessing](#data-and-preprocessing)).
 
 ## Task interface
 
@@ -159,14 +155,27 @@ python evaluation/s2sql_eval.py \
 
 The benchmark data lives on
 [Hugging Face](https://huggingface.co/datasets/Snowflake/HybridDeepResearch).
-It is a public test set with gold answers so local grading is possible. Agent runs
-should still only consume `final_question`, `hint`, and `db`.
+It is a public test set with gold answers so local grading is possible. Agent runs should still only consume `final_question`, `hint`, and `db`.
+
+Both splits cover the same 380 task IDs:
+
+| Total | SQL2S | S2SQL | Parallel |
+| ---: | ---: | ---: | ---: |
+| 380 | 203 | 58 | 119 |
+
+`preview` is the version used for the paper results. `release` is the result of several further rounds of internal review: we re-checked each task against its evidence chain and rewrote 88 questions that were ambiguous or under-constrained; gold answers and reference SQL are unchanged. Use `release` for new evaluations, and `preview` only to reproduce the paper numbers.
+
+```bash
+hf download Snowflake/HybridDeepResearch --repo-type dataset
+```
+
+SQLite databases are not in this repository. Get them from
+[birdsql/livesqlbench-base-lite-sqlite](https://huggingface.co/datasets/birdsql/livesqlbench-base-lite-sqlite).
 
 The preprocessing examples show how to:
 
-1. merge the v1 baseline with sparse v2 corrections into release JSONL files;
-2. optionally strip gold fields when you only want agent-facing inputs;
-3. validate a submission's `predictions.jsonl` before evaluation.
+1. optionally strip gold fields when you only want agent-facing inputs;
+2. validate a submission's `predictions.jsonl` before evaluation.
 
 See [`data/README.md`](data/README.md) and
 [`preprocess/README.md`](preprocess/README.md).
