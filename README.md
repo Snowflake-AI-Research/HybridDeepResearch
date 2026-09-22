@@ -1,7 +1,7 @@
 # HybridDeepResearch
 
 <div align="center">
-  <p><strong>A benchmark for deep-research agents that reason across SQL databases and the open web.</strong></p>
+  <h2>Benchmarking Hybrid Deep Research Across Database Querying and Web Search</h2>
 
   <p>
     Ruofan Wu* · Peiran Xu* · Xiaolong Li* · Fan Shu* ·
