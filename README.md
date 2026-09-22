@@ -24,7 +24,7 @@ filter, or candidate set across modalities and return one end-to-end answer.
 - **September, 2026** — Paper release [Arxiv Paper](https://arxiv.org/abs/2609.09410).
 - **August, 2026** — Repository preview with reference prompts, public tools,
   evaluation scripts, and preprocessing utilities; the initial
-  [leaderboard](https://refactored-couscous-pz385jr.pages.github.io/) went live;
+  [leaderboard](https://snowflake-ai-research.github.io/hybrid_leaderboard/) went live;
   benchmark data is on
   [Hugging Face](https://huggingface.co/datasets/Snowflake/HybridDeepResearch).
 - **June 2, 2026** — HybridDeepResearch introduced in the
